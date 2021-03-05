@@ -10,9 +10,20 @@ mongoose.connect(
 
 const productSeed = [
     {
-        title:"",
+        title:"Tree of Life Pendant",
         brand: "",
-        price:  ,
+        price: 95.00 ,
 
     }
 ]
+db.Product
+  .remove({})
+  .then(() => db.Product.collection.insertMany(productSeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
