@@ -10,11 +10,12 @@ mongoose.connect(
 
 const productSeed = [
     {
+
         title:"Tree of Life Pendant",
         brand: "",
         price: 95.00 ,
-
     }
+
 ]
 db.Product
   .remove({})
