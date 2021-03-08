@@ -12,15 +12,22 @@ function Home() {
     const [formObject, setFormObject] = useState({})
 
     // Load all books and store them with setBooks
-    useEffect(() => {
-        loadProducts()
+    useEffect( () => {
+    // need to promisify this function
+        let results = API();
+
+        console.log(results);
+        setProducts({results});
+       // loadProducts()
     }, [])
 
     // Loads all books and sets them to books
-    function loadProducts() {
+    async function loadProducts() {
         //API.get()
-        let results = API();
-        //setProducts(results);
+        let results = await API();
+
+        console.log(results);
+        setProducts(results);
        //     .then(res =>
        //         setProducts(res.data)
        //     )
