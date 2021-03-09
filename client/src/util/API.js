@@ -1,27 +1,16 @@
-import axios from 'axios'
-const MY_KEY = process.env.REACT_APP_API_KEY;
-
-// const handlerdata = () => {
-//    // let products = this.state.products.join( `,+`);
-    let products = "comics"
-//    axios
-//         .get(
-//         `https://api.rainforestapi.com/request?api_key=${MY_KEY}&type=search&amazon_domain=amazon.com&search_term=${products}`
-//     )
-// .then(res => {
-//    // this.setState({
-//     console.log( res.data[0] )
-//     return res.data;
-// })
-// .catch(error => console.error(`Something went wrong ${error}`));
-
-// };
-
-
-// export default handlerdata;
+import axios from "axios";
 
 export default {
-    getProducts : function(){
-        return axios.get(`https://api.rainforestapi.com/request?api_key=${"KEY2"}&type=search&amazon_domain=amazon.com&search_term=${products}`)
-    }
-}
+  // Gets all products
+  getProduct: function() {
+    return axios.get("/api/products");
+  },
+  // Gets the products with the given id
+  getProduct: function(id) {
+    return axios.get("/api/products" + id);
+  },
+  // Saves a products to the database
+  saveProducts: function(productData) {
+    return axios.post("/api/products", productData);
+  }
+};
