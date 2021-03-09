@@ -22,6 +22,6 @@ const MY_KEY = process.env.REACT_APP_API_KEY;
 
 export default {
     getProducts : function(){
-        return axios.get(`https://api.rainforestapi.com/request?api_key=${"50CCCA8849D24FF7967A7749BCC985F9"}&type=search&amazon_domain=amazon.com&search_term=${products}`)
+        return axios.get(`https://api.rainforestapi.com/request?api_key=${"KEY2"}&type=search&amazon_domain=amazon.com&search_term=${products}`)
     }
 }
