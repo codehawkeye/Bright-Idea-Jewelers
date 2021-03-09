@@ -7,6 +7,7 @@ import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import data from "../util/products.json"
 
+
 function Home() {
     // Setting our component's initial state
     const [products, setProducts] = useState([])
@@ -37,7 +38,16 @@ function Home() {
        //     )
        //     .catch(err => console.log(err));
     };
-
+    // function show_image(src, width, height, alt) {
+    //     var img = document.createElement("img");
+    //     img.src = src;
+    //     img.width = width;
+    //     img.height = height;
+    //     img.alt = alt;
+    
+    //     // This next line will just add it to the <body> tag
+    //     document.list.appendChild(img);
+    // }
     return (
         <Container fluid>
             <Row>
@@ -45,28 +55,31 @@ function Home() {
                     <Jumbotron>
                         <h1>What Trinkets should I look at?</h1>
                     </Jumbotron>
-
+                    {products.length ? (
+                        <List>
+                            
+                            {products.map(product => (
+                                <ListItem key={product._id}>
+                                    <Link to={"/books/" + product._id}>
+                                        <strong>
+                                            {product.title}
+                                        </strong>
+                                        <br></br>
+                                        <img src={product.image} />
+                                    </Link>
+                                    {/* <DeleteBtn onClick={() => deleteBook(product._id)} /> */}
+                                </ListItem>)
+                            )}
+                        </List>
+                    ) : (
+                            <h3>No Results to Display</h3>
+                        )}
                 </Col>
                 <Col size="md-6 sm-12">
                     <Jumbotron>
                         <h1>Products On My List</h1>
                     </Jumbotron>
-                    {products.length ? (
-                        <List>
-                            {products.map(product => (
-                                <ListItem key={product._id}>
-                                    <Link to={"/books/" + product._id}>
-                                        <strong>
-                                            {product.title} by {product.author}
-                                        </strong>
-                                    </Link>
-                                    {/* <DeleteBtn onClick={() => deleteBook(product._id)} /> */}
-                                </ListItem>
-                            ))}
-                        </List>
-                    ) : (
-                            <h3>No Results to Display</h3>
-                        )}
+                    
                 </Col>
             </Row>
         </Container>

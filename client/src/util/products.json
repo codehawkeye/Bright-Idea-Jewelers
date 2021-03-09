@@ -1,5 +1,4 @@
-[
-{
+[{
     "title":"Tree of Life Pendant",
     "brand": "",
     "price": 95.00,
@@ -10,7 +9,7 @@
     "price": 55.00,
     "image": "../images/deepbluependant"
 },{
-    "title":"Dual Point Quartz Bronze Deer Skul",
+    "title":"Dual Point Quartz Bronze Deer Skull",
     "brand": "",
     "price": 55.00,
     "image": "../images/skullpendant1"
@@ -24,5 +23,4 @@
     "brand": "",
     "price": 95.00,
     "image": "../images/treependant5"
-}
-]
+}]
