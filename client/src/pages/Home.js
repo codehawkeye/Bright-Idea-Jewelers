@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import data from "../util/products.json"
 
 function Home() {
     // Setting our component's initial state
@@ -12,22 +13,25 @@ function Home() {
     const [formObject, setFormObject] = useState({})
 
     // Load all books and store them with setBooks
-    useEffect( () => {
-    // need to promisify this function
-        let results = API();
-
-        console.log(results);
-        setProducts({results});
-       // loadProducts()
+    useEffect(() => {
+        console.log("hook working");
+        loadProducts()
     }, [])
 
     // Loads all books and sets them to books
-    async function loadProducts() {
+    function loadProducts() {
         //API.get()
-        let results = await API();
-
-        console.log(results);
-        setProducts(results);
+        setProducts(data)
+        // API.getProducts().then(response => {
+        //     console.log(response.data.search_results)
+            
+        //     // console.log(products)
+        //     // let resultsVar = (response.data.search_results)
+        //     // console.log(response)
+        //     // console.log(response.data.search_results)
+        // })
+        
+        //setProducts(results);
        //     .then(res =>
        //         setProducts(res.data)
        //     )
