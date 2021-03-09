@@ -60,7 +60,7 @@ function Home() {
                             
                             {products.map(product => (
                                 <ListItem key={product._id}>
-                                    <Link to={"/books/" + product._id}>
+                                    <Link to={"/products/" + product._id}>
                                         <strong>
                                             {product.title}
                                         </strong>

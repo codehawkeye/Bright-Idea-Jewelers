@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
-import API from "../utils/API";
+import API from "../util/API";
 
 function Detail(props) {
     const [book, setBook] = useState({})
@@ -22,7 +22,7 @@ function Detail(props) {
                 <Col size="md-12">
                     <Jumbotron>
                         <h1>
-                            {product.title} by {product.brand}
+                            {/* {product.title} by {product.brand} */}
                         </h1>
                     </Jumbotron>
                 </Col>
@@ -32,7 +32,7 @@ function Detail(props) {
                     <article>
                         <h1>Price</h1>
                         <p>
-                            {product.price}
+                            {/* {product.price} */}
                         </p>
                     </article>
                 </Col>
