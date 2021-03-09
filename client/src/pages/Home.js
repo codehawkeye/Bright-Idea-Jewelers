@@ -6,7 +6,10 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import data from "../util/products.json"
+import logo from "../images/SnSLogo.png";
 
+import { Card, Button } from "react-bootstrap";
+import './homeStyles.css';
 
 function Home() {
     // Setting our component's initial state
@@ -23,63 +26,46 @@ function Home() {
     function loadProducts() {
         //API.get()
         setProducts(data)
-        // API.getProducts().then(response => {
-        //     console.log(response.data.search_results)
-            
-        //     // console.log(products)
-        //     // let resultsVar = (response.data.search_results)
-        //     // console.log(response)
-        //     // console.log(response.data.search_results)
-        // })
-        
-        //setProducts(results);
-       //     .then(res =>
-       //         setProducts(res.data)
-       //     )
-       //     .catch(err => console.log(err));
+
     };
-    // function show_image(src, width, height, alt) {
-    //     var img = document.createElement("img");
-    //     img.src = src;
-    //     img.width = width;
-    //     img.height = height;
-    //     img.alt = alt;
-    
-    //     // This next line will just add it to the <body> tag
-    //     document.list.appendChild(img);
-    // }
+
+
     return (
         <Container fluid>
             <Row>
                 <Col size="md-6">
                     <Jumbotron>
+                        <img src={logo} id="logo"/>
+                        
                         <h1>What Trinkets should I look at?</h1>
                     </Jumbotron>
                     {products.length ? (
                         <List>
-                            
                             {products.map(product => (
-                                <ListItem key={product._id}>
-                                    <Link to={"/products/" + product._id}>
-                                        <strong>
-                                            {product.title}
-                                        </strong>
-                                        <br></br>
-                                        <img src={product.image} />
-                                    </Link>
-                                    {/* <DeleteBtn onClick={() => deleteBook(product._id)} /> */}
-                                </ListItem>)
+                                <>
+                                <Card style= {{ width: '18rem' }} key={product._id}>
+                                    <Card.Img variant="top" src="{products.image}" />
+                                    <Card.Body className="cardBody">
+                                        <Card.Title>{product.title}</Card.Title>
+                                        <Card.Text>
+                                            Some quick example text to build on the card title and make up the bulk of
+                                            the card's content.
+                                        </Card.Text>
+                                        <Button variant="primary" >Go somewhere</Button>
+                                    </Card.Body>
+                                </Card>
+                                </>)
                             )}
                         </List>
                     ) : (
-                            <h3>No Results to Display</h3>
-                        )}
+                        <h3>No Results to Display</h3>
+                    )}
                 </Col>
                 <Col size="md-6 sm-12">
                     <Jumbotron>
                         <h1>Products On My List</h1>
                     </Jumbotron>
-                    
+
                 </Col>
             </Row>
         </Container>

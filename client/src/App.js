@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import Nav from "./components/Nav";
 import Details from "./pages/Detail";
-import home from "./pages/Home";
+import Home from "./pages/Home";
 
 
 
@@ -32,7 +32,7 @@ export default () => {
             <Link to="/Details">Details Page</Link>
           </li>
           <li>
-            <Link to="/Home">Home Page</Link>
+            <Link to="/home">Home Page</Link>
           </li>
           <li>
             <Link to="/modus-create">Modus Create</Link>
@@ -40,7 +40,10 @@ export default () => {
         </ul>
 
         <Switch>
+          {/* <Route exact path="/home/:id" component={Detail} /> */}
+          <Route exact path="/home" component={Home} />
           <Route path="/:id" children={<Child />} />
+         
         </Switch>
       </div>
     </Router>
