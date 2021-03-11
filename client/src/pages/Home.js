@@ -8,6 +8,9 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 // import data from "../util/products.js";
 import logo from "../images/SnSLogo.png";
 import { Card, Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css"
+
+
 import "./homeStyles.css";
 const data = [
     {
@@ -41,6 +44,7 @@ const data = [
         image: require("../images/treependant5.PNG"),
     },
 ]
+
 function Home() {
     // Setting our component's initial state
     const [products, setProducts] = useState([]);
@@ -59,17 +63,25 @@ function Home() {
     return (
         <Container fluid>
             <Row>
-                <Col size="md-6">
-                    <Jumbotron>
-                        <img src={logo} id="logo" />
-                        <h1>What Trinkets should I look at?</h1>
+
+                <Col size= "md-12">
+                <Jumbotron>
+                        <img src={logo} id="logo" alt="Sparkle and Swirls logo"/>
+                        
                     </Jumbotron>
+                
+                </Col>
+            
+            </Row>
+            <Row>
+                <Col size="md-6">
+                    
                     {products.length ? (
                         <List>
                             {products.map((product) => (
                                 <>
                                     <Card style={{ width: "18rem" }} key={product._id}>
-                                        <Card.Img variant="top" src={product.image} />
+                                        <Card.Img variant="top" src={product.image}  width="180rem" height="180rem"/>
                                         <Card.Body className="cardBody">
                                             <Card.Title>{product.title}</Card.Title>
                                             <Card.Text>

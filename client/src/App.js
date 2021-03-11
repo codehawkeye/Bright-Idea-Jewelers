@@ -6,9 +6,12 @@ import {
   Link,
   useParams
 } from "react-router-dom";
-import Nav from "./components/Nav";
+import Nav from "./components/Nav/index";
+import Footer from "./components/Footer";
 import Details from "./pages/Detail";
 import Home from "./pages/Home";
+import "bootstrap/dist/css/bootstrap.min.css"
+
 
 
 
@@ -20,32 +23,25 @@ import Home from "./pages/Home";
 
 export default () => {
   return (
+    
     <Router>
+      <Nav/>
       <div>
-        <h2>Trinkits</h2>
+       
 
-        <ul>
-          <li>
-            <Link to="/Nav">Navigator</Link>
-          </li>
-          <li>
-            <Link to="/Details">Details Page</Link>
-          </li>
-          <li>
-            <Link to="/home">Home Page</Link>
-          </li>
-          <li>
-            <Link to="/modus-create">Modus Create</Link>
-          </li>
-        </ul>
+        
 
         <Switch>
           {/* <Route exact path="/home/:id" component={Detail} /> */}
           <Route exact path="/home" component={Home} />
-          <Route path="/:id" children={<Child />} />
+          {/* <Route path="/:id" children={<Child />} /> */}
+          <Route exact path="/Details" component={Details} />
+          <Route exact path="/Footer" component={Footer} />
          
         </Switch>
+      
       </div>
+      <Footer/>
     </Router>
   );
 }
