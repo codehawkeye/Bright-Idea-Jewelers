@@ -10,6 +10,7 @@ import logo from "../images/SnSLogo.png";
 
 import { Card, Button } from "react-bootstrap";
 import './homeStyles.css';
+import "bootstrap/dist/css/bootstrap.min.css"
 
 function Home() {
     // Setting our component's initial state
@@ -33,12 +34,19 @@ function Home() {
     return (
         <Container fluid>
             <Row>
-                <Col size="md-6">
-                    <Jumbotron>
+                <Col size= "md-12">
+                <Jumbotron>
                         <img src={logo} id="logo"/>
                         
                         <h1>What Trinkets should I look at?</h1>
                     </Jumbotron>
+                
+                </Col>
+            
+            </Row>
+            <Row>
+                <Col size="md-6">
+                    
                     {products.length ? (
                         <List>
                             {products.map(product => (
