@@ -7,6 +7,7 @@ import {
   useParams
 } from "react-router-dom";
 import Nav from "./components/Nav/index";
+import Footer from "./components/Footer";
 import Details from "./pages/Detail";
 import Home from "./pages/Home";
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -26,7 +27,7 @@ export default () => {
     <Router>
       <Nav/>
       <div>
-        <h2>Trinkits</h2>
+       
 
         
 
@@ -35,11 +36,12 @@ export default () => {
           <Route exact path="/home" component={Home} />
           {/* <Route path="/:id" children={<Child />} /> */}
           <Route exact path="/Details" component={Details} />
+          <Route exact path="/Footer" component={Footer} />
          
         </Switch>
       
       </div>
-      {/* insert footer */}
+      <Footer/>
     </Router>
   );
 }

@@ -36,7 +36,7 @@ function Home() {
             <Row>
                 <Col size= "md-12">
                 <Jumbotron>
-                        <img src={logo} id="logo"/>
+                        <img src={logo} id="logo" alt="Sparkle and Swirls logo"/>
                         
                         <h1>What Trinkets should I look at?</h1>
                     </Jumbotron>
