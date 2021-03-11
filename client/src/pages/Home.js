@@ -38,7 +38,7 @@ function Home() {
                 <Jumbotron>
                         <img src={logo} id="logo" alt="Sparkle and Swirls logo"/>
                         
-                        <h1>What Trinkets should I look at?</h1>
+                        {/* <h1>What Trinkets should I look at?</h1> */}
                     </Jumbotron>
                 
                 </Col>
