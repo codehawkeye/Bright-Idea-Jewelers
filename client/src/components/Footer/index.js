@@ -3,17 +3,15 @@ import { Link } from "react-router-dom";
 
  const Footer = () => {
   return (
-    <div>
-          <footer className="footer">
-        
-              <div class="container">
-                  <span class="text-muted">BeardBrothers.Inc</span>
-                  
-              </div>
-              
-              
-      </footer>
-    </div>
+    <footer>
+            <Container>
+                <Row>
+                    <Col className='text-center py-3'>
+                        Copyright &copy; Sparkles and Swirls
+                    </Col>
+                </Row>
+            </Container>
+        </footer>
   )
  }
 
